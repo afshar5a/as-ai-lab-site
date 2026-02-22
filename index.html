@@ -4,13 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Afshar Sanam AI Lab — Computational Economics, AI Systems Architecture & Structural Modeling</title>
-  <meta name="description" content="Afshar Sanam AI Lab explores computational economics, AI systems architecture, and structural modeling under economic constraint." />
+  <meta name="description" content="Afshar Sanam AI Lab — independent research in computational economics, AI systems architecture, and structural modeling. Focus: AI systems economics, macro sentiment regimes, and optimization under constraint." />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="topbar">
+  <!-- Fixed Topbar -->
+  <header class="topbar" role="navigation">
     <div class="wrap topbar__inner">
       <div class="brand">
         <div class="brand__mark" aria-hidden="true">AS</div>
@@ -20,12 +22,12 @@
         </div>
       </div>
 
-      <nav class="nav" aria-label="Primary">
+      <nav class="nav" aria-label="Primary Navigation">
         <a href="#framework">Framework</a>
         <a href="#research">Research</a>
         <a href="#audience">Who it’s for</a>
-        <a href="#engage">Engage</a>
-        <a class="nav__cta" href="mailto:afshar.sanam@gmail.com?subject=AI%20Lab%20%E2%80%94%20Research%20Inquiry">Contact</a>
+        <a href="#about">About</a>
+        <a class="nav__cta" href="mailto:afshar.sanam@gmail.com?subject=AI%20Lab%20—%20Connect">Connect</a>
       </nav>
     </div>
   </header>
@@ -33,51 +35,65 @@
   <main id="main" class="wrap">
     <!-- HERO -->
     <section class="hero">
-      <div class="hero__left">
-        <p class="kicker">Independent applied research</p>
+      <div>
+        <p class="kicker">Independent Research Lab</p>
+
         <h1>AI systems scale. Margins don’t.</h1>
+
         <p class="lead">
-          As AI adoption grows, inference cost, model complexity, and architectural overhead reshape economic viability.
-          Most teams optimize for capability. Few model <strong>structural margin risk</strong>.
+          As AI adoption grows, inference cost, model complexity, retrieval depth, and orchestration overhead quietly reshape
+          economic viability. Most teams measure capability. Few quantify structural margin risk.
         </p>
 
         <div class="cta">
-          <a class="btn" href="#framework">View the Framework</a>
-          <a class="btn btn--secondary" href="#research">Explore Research</a>
+          <a class="btn" href="#framework">View the framework</a>
+          <a class="btn btn--secondary" href="#research">Explore research</a>
         </div>
 
         <p class="note">
-          Developed independently. No confidential or employer data is used.
+          Built independently as personal research and experimentation. Developed outside professional responsibilities.
+          No confidential or employer data is used.
         </p>
+
+        <div class="pillrow">
+          <span class="pill">AI Systems Economics</span>
+          <span class="pill">Economic Signals & Regimes</span>
+          <span class="pill">Optimization under Constraint</span>
+          <span class="pill">Structural Modeling</span>
+        </div>
       </div>
 
-      <aside class="hero__right">
-        <div class="card card--tight">
-          <h2 class="card__title">Core model (applied)</h2>
+      <aside class="card card--tight">
+        <h3 class="card__title">Core definitions</h3>
 
-          <div class="eq">
-            <div class="eq__label">Cost per Effective Request</div>
-            <div class="eq__expr">
-              <span class="mono">CPER</span> =
-              <span class="mono">(Token&nbsp;Cost + Retrieval/Tooling + Orchestration)</span>
-              <span class="mono">/ Non-cached&nbsp;Requests</span>
-            </div>
+        <div class="eq">
+          <div class="eq__label">Cost per Effective Request (CPER)</div>
+          <div class="eq__expr">
+            <span class="mono">CPER = (TokenCost + Overhead) / EffectiveRequests</span>
           </div>
+        </div>
 
-          <div class="eq">
-            <div class="eq__label">Break-even condition</div>
-            <div class="eq__expr">
-              <span class="mono">Revenue/User</span> &ge;
-              <span class="mono">CPER</span> &times;
-              <span class="mono">Requests/User</span>
-            </div>
+        <div class="eq">
+          <div class="eq__label">Effective Requests</div>
+          <div class="eq__expr">
+            <span class="mono">EffectiveRequests = TotalRequests × (1 − CacheHitRate)</span>
           </div>
+        </div>
 
-          <div class="pillrow" aria-label="Focus areas">
-            <span class="pill">Unit economics</span>
-            <span class="pill">Margin resilience</span>
-            <span class="pill">Signal modeling</span>
-            <span class="pill">Optimization</span>
+        <div class="eq">
+          <div class="eq__label">Break-even Revenue per User</div>
+          <div class="eq__expr">
+            <span class="mono">RPU_be = MonthlyCost / MAU</span>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="callout__dot"></div>
+          <div>
+            <div class="callout__title">Working principle</div>
+            <div class="callout__text">
+              Margin is an architectural property. If architecture ignores economics, growth amplifies inefficiency.
+            </div>
           </div>
         </div>
       </aside>
@@ -86,39 +102,49 @@
     <!-- FRAMEWORK -->
     <section id="framework" class="section">
       <div class="section__head">
-        <h2>Margin is an architectural property.</h2>
+        <h2>Framework</h2>
         <p class="sublead">
-          The economic behavior of AI systems is determined long before scale.
-          Token budgets, retrieval depth, caching strategy, model routing, and orchestration shape cost per effective request and long-term resilience.
+          A practical approach to model AI systems as economic systems — linking architecture decisions to cost, margin,
+          and resilience under scale.
         </p>
       </div>
 
-      <div class="grid grid--2">
+      <div class="grid grid--3">
         <div class="card">
-          <h3>What gets modeled</h3>
-          <ul class="list">
-            <li><strong>Cost structure</strong>: input/output tokens + non-token overhead (retrieval, tools, observability)</li>
-            <li><strong>Scale dynamics</strong>: MAU growth, requests/user, seasonal variance</li>
-            <li><strong>Efficiency</strong>: cache hit rate, routing, compression, batching</li>
-            <li><strong>Risk</strong>: margin compression, tail scenarios, failure modes</li>
-          </ul>
+          <h3>1) Architecture → Cost Map</h3>
+          <p class="muted">
+            Translate design choices into cost drivers: token budgets, retrieval depth, tool calls, caching, and orchestration.
+          </p>
+          <div class="meta">
+            <span class="tag">Input/Output tokens</span>
+            <span class="tag">Overhead per request</span>
+            <span class="tag">Cache economics</span>
+          </div>
         </div>
 
         <div class="card">
-          <h3>Why it matters</h3>
-          <p>
-            If architecture ignores economics, growth amplifies inefficiency.
-            This lab develops applied models to evaluate AI systems under economic constraint—before scale exposes fragility.
+          <h3>2) Margin Resilience</h3>
+          <p class="muted">
+            Stress-test unit economics under growth and volatility: MAU growth, usage intensity, model pricing changes,
+            and prompt drift.
           </p>
+          <div class="meta">
+            <span class="tag">Sensitivity analysis</span>
+            <span class="tag">Break-even thresholds</span>
+            <span class="tag">Risk levels</span>
+          </div>
+        </div>
 
-          <div class="callout">
-            <div class="callout__dot" aria-hidden="true"></div>
-            <div>
-              <div class="callout__title">Practical outcome</div>
-              <div class="callout__text">
-                Identify dominant cost drivers (input vs output vs overhead), quantify break-even thresholds, and surface the fastest structural levers to restore margin.
-              </div>
-            </div>
+        <div class="card">
+          <h3>3) Optimization Levers</h3>
+          <p class="muted">
+            Identify highest-leverage interventions: compression, RAG depth tuning, caching strategy, token caps,
+            and model-tier routing.
+          </p>
+          <div class="meta">
+            <span class="tag">Constraint modeling</span>
+            <span class="tag">Cost guardrails</span>
+            <span class="tag">Architecture tactics</span>
           </div>
         </div>
       </div>
@@ -127,174 +153,146 @@
     <!-- RESEARCH TRACKS -->
     <section id="research" class="section">
       <div class="section__head">
-        <h2>Three research tracks</h2>
+        <h2>Research tracks</h2>
         <p class="sublead">
-          Technical, applied, and model-driven—spanning AI system economics and macro-level economic signals.
+          Three parallel tracks that connect AI architecture, economics, and structural behavior of systems under constraint.
         </p>
       </div>
 
       <div class="grid grid--3">
-        <article class="card">
+        <div class="card">
           <h3>1) AI Systems Economics</h3>
           <ul class="list">
-            <li>Cost per effective request (CPER) modeling</li>
-            <li>Margin resilience under growth and usage shocks</li>
+            <li>Cost per effective request (CPER)</li>
+            <li>Margin resilience modeling</li>
+            <li>Growth sensitivity analysis</li>
             <li>Architecture → Cost → Margin mapping</li>
-            <li>Sensitivity analysis: tokens, caching, routing, overhead</li>
           </ul>
-          <div class="meta">
-            <span class="tag">Unit economics</span>
-            <span class="tag">Inference systems</span>
-          </div>
-        </article>
+        </div>
 
-        <article class="card">
+        <div class="card">
           <h3>2) Economic Signal Research</h3>
           <ul class="list">
             <li>Central bank speech sentiment modeling</li>
-            <li>Narrative regime detection & change-point analysis</li>
-            <li>Exploratory predictive modeling (carefully scoped)</li>
-            <li>Economic text analytics and narrative volatility</li>
+            <li>Narrative regime detection</li>
+            <li>Exploratory predictive modeling (where valid)</li>
+            <li>Macroeconomic text analytics</li>
           </ul>
-          <div class="meta">
-            <span class="tag">Sentiment</span>
-            <span class="tag">Macro signals</span>
-          </div>
-        </article>
+        </div>
 
-        <article class="card">
+        <div class="card">
           <h3>3) Optimization & Decision Systems</h3>
           <ul class="list">
-            <li>Multi-parameter optimization across constraints</li>
-            <li>Cost–latency–accuracy tradeoffs</li>
-            <li>Structural feedback and stability analysis</li>
-            <li>Resilience design under scale and uncertainty</li>
+            <li>Multi-parameter optimization</li>
+            <li>Constraint modeling</li>
+            <li>Structural feedback analysis</li>
+            <li>System resilience design</li>
           </ul>
-          <div class="meta">
-            <span class="tag">Optimization</span>
-            <span class="tag">Constraints</span>
-          </div>
-        </article>
+        </div>
       </div>
     </section>
 
-    <!-- WHO IT'S FOR -->
+    <!-- WHO IT’S FOR -->
     <section id="audience" class="section">
       <div class="section__head">
-        <h2>Who this is for</h2>
+        <h2>Who it’s for</h2>
         <p class="sublead">
-          Leaders responsible for deploying AI under economic constraint and uncertainty.
+          This work is aimed at leaders and builders who need technical depth *and* economic clarity.
         </p>
       </div>
 
       <div class="grid grid--2">
         <div class="card">
+          <h3>Primary audience</h3>
           <ul class="list list--big">
-            <li><strong>CTOs</strong> managing architectural scale and reliability</li>
-            <li><strong>CFOs</strong> evaluating AI ROI and capital allocation discipline</li>
-            <li><strong>Product leaders</strong> balancing capability and margin</li>
-            <li><strong>Investors</strong> assessing structural sustainability</li>
+            <li>CTOs deploying AI at scale</li>
+            <li>CFOs evaluating AI ROI and structural margin risk</li>
+            <li>Product leaders facing rising inference costs</li>
+            <li>Investors assessing economic viability of AI-native systems</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>What you’ll find here</h3>
-          <ul class="list">
-            <li>Applied models and research notes</li>
-            <li>Economic guardrails for AI features</li>
-            <li>Architecture levers that actually move margin</li>
-            <li>Signal modeling experiments in economic communication</li>
-          </ul>
+          <h3>Engagement</h3>
           <p class="muted">
-            This is not prompt engineering. It is economic architecture and systems modeling.
+            Calm, research-first engagement — no aggressive selling language. Examples:
           </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT THE FOUNDER -->
-    <section id="about" class="section">
-      <div class="section__head">
-        <h2>About the Founder</h2>
-      </div>
-
-      <div class="card">
-        <p>
-          Afshar Sanam founded this lab to study intelligent systems as economic systems.
-        </p>
-        <p>
-          Her work examines how AI architectures, inference cost dynamics, and growth patterns interact — and how structural design decisions influence long-term economic viability.
-          She develops applied models to analyze cost sensitivity, margin resilience, and constraint-aware system behavior.
-        </p>
-        <p>
-          In parallel, she conducts computational research on macro-level economic signals, including sentiment modeling and narrative regime detection in policy communication.
-        </p>
-        <p class="muted">
-          This initiative reflects a commitment to disciplined, technically rigorous exploration at the intersection of AI systems architecture, computational economics, and structural modeling.
-        </p>
-
-        <div class="aboutlinks">
-          <a class="link" href="mailto:afshar.sanam@gmail.com?subject=AI%20Lab%20%E2%80%94%20Connect">Email</a>
-          <!-- Replace the # with your LinkedIn URL -->
-          <a class="link" href="https://www.linkedin.com/in/afsharsanam/" rel="noopener">LinkedIn</a>
-          <!-- Replace the # with your GitHub profile -->
-          <a class="link" href="#" rel="noopener">GitHub</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ENGAGEMENT -->
-    <section id="engage" class="section">
-      <div class="section__head">
-        <h2>Engage</h2>
-        <p class="sublead">
-          Subtle, research-aligned collaboration—no hype.
-        </p>
-      </div>
-
-      <div class="grid grid--2">
-        <div class="card">
-          <h3>Ways to connect</h3>
           <ul class="list">
-            <li>Applied modeling collaboration (AI economics / macro signals)</li>
-            <li>Architecture review focused on cost drivers and guardrails</li>
-            <li>Research discussion or reading group-style exchange</li>
+            <li>Executive briefings on unit economics and risk</li>
+            <li>Architecture reviews through an economic lens</li>
+            <li>Research collaboration (methods, models, papers)</li>
           </ul>
 
           <div class="cta cta--compact">
-            <a class="btn" href="mailto:afshar.sanam@gmail.com?subject=AI%20Lab%20%E2%80%94%20Research%20Inquiry">Discuss research or collaboration</a>
+            <a class="btn" href="mailto:afshar.sanam@gmail.com?subject=AI%20Lab%20—%20Research%20Inquiry">Connect about research</a>
+            <a class="btn btn--secondary" href="#about">About the founder</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="section__head">
+        <h2>About</h2>
+        <p class="sublead">
+          Afshar Sanam AI Lab is founded as an independent research space exploring the intersection of AI systems architecture and computational economics.
+        </p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card">
+          <h3>About the founder</h3>
+          <p>
+            <strong>Afshar Sanam</strong> is a technologist researching the intersection of AI systems architecture,
+            computational economics, and structural modeling.
+          </p>
+          <p class="muted">
+            The lab is developed independently, outside professional responsibilities, and does not use confidential information from any employer.
+          </p>
+
+          <div class="aboutlinks">
+            <a class="link" href="mailto:afshar.sanam@gmail.com">Email</a>
+            <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="link" href="https://github.com/afshar5a" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
 
         <div class="card">
           <h3>Independence statement</h3>
-          <p>
-            Developed independently, outside professional responsibilities. No confidential or employer data is used.
+          <p class="muted">
+            All content on this site is independently produced. No employer systems, internal documents, or non-public data are used.
           </p>
           <p class="muted">
-            Any examples, assumptions, or models are generic and intended for research and learning purposes.
+            Any examples are generic and intended for modeling and research illustration only.
           </p>
+
+          <div class="callout">
+            <div class="callout__dot"></div>
+            <div>
+              <div class="callout__title">Note</div>
+              <div class="callout__text">
+                If you’re viewing this site from a professional context, treat it as a research portfolio — not a commercial offering.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
-      <div class="footer__left">
-        <div class="footer__brand">
-          <strong>Afshar Sanam AI Lab</strong>
-          <span class="muted">— Computational Economics & AI Systems Architecture</span>
-        </div>
+      <div>
+        <strong>Afshar Sanam AI Lab</strong>
         <div class="footer__fine muted">
-          Developed independently. No confidential or employer data is used.
+          Computational Economics, AI Systems Architecture & Structural Modeling
         </div>
       </div>
 
-      <div class="footer__right">
-        <a class="link" href="#framework">Framework</a>
-        <a class="link" href="#research">Research</a>
-        <a class="link" href="#about">About</a>
+      <div class="footer__right muted">
+        <span>© <span id="y"></span></span>
+        <span>•</span>
         <a class="link" href="mailto:afshar.sanam@gmail.com">Contact</a>
-        <span class="muted">© <span id="y"></span></span>
       </div>
     </footer>
   </main>

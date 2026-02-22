@@ -19,12 +19,15 @@
 
 *{ box-sizing: border-box; }
 html, body{ height: 100%; }
+html{ scroll-behavior: smooth; }
+
 body{
   margin: 0;
   background: var(--bg);
   color: var(--ink);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.5;
+  padding-top: 74px; /* IMPORTANT: space for fixed topbar */
 }
 
 /* Accessibility */
@@ -68,12 +71,15 @@ body{
 
 /* Topbar */
 .topbar{
-  position: sticky;
+  position: fixed;              /* FIXED: always visible */
   top: 0;
-  background: rgba(255,255,255,.78);
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
-  z-index: 100;
+  z-index: 999;
+  box-shadow: 0 4px 14px rgba(11,18,32,.06);
 }
 .topbar__inner{
   display: flex;
@@ -373,6 +379,8 @@ body{
 
 /* Responsive */
 @media (max-width: 980px){
+  body{ padding-top: 96px; }
+
   .hero{
     grid-template-columns: 1fr;
   }

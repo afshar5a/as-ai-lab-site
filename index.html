@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Afshar Sanam AI Lab — Computational Economics, AI Systems Architecture & Structural Modeling</title>
   <meta name="description" content="Afshar Sanam AI Lab — independent research in computational economics, AI systems architecture, and structural modeling. Focus: AI systems economics, macro sentiment regimes, and optimization under constraint." />
-  <link rel="stylesheet" href="styles.css?v=darkMIT2" />
+  <link rel="stylesheet" href="styles.css?v=darkMIT-min" />
 </head>
 
-<body>
+<body class="theme-mit">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Fixed Topbar -->
@@ -25,7 +25,6 @@
       <nav class="nav" aria-label="Primary Navigation">
         <a href="#framework">Framework</a>
         <a href="#tracks">Research tracks</a>
-        <a href="#notes">Notes</a>
         <a href="#audience">Who it’s for</a>
         <a href="#about">About</a>
         <a class="nav__cta" href="mailto:afshar.sanam@gmail.com?subject=AI%20Lab%20—%20Connect">Connect</a>
@@ -34,21 +33,19 @@
   </header>
 
   <main id="main" class="wrap">
-
     <!-- HERO -->
     <section class="hero">
       <div class="hero__left">
         <div class="kicker">Independent Research Lab</div>
         <h1>AI systems scale. Margins don’t.</h1>
-
         <p class="lead">
-          As adoption grows, inference cost, retrieval depth, and orchestration overhead quietly reshape economic viability.
+          As AI adoption grows, inference cost, retrieval depth, and orchestration overhead quietly reshape economic viability.
           Most organizations measure capability. Few quantify structural margin risk.
         </p>
 
         <div class="cta">
           <a class="btn" href="#framework">View the framework</a>
-          <a class="btn btn--secondary" href="#notes">Read research notes</a>
+          <a class="btn btn--secondary" href="#tracks">Explore research</a>
         </div>
 
         <p class="note">
@@ -56,7 +53,7 @@
           No confidential or employer data is used.
         </p>
 
-        <div class="pillrow" aria-label="Key themes">
+        <div class="pillrow">
           <span class="pill">AI Systems Economics</span>
           <span class="pill">Economic Signals</span>
           <span class="pill">Optimization</span>
@@ -82,35 +79,6 @@
           <div class="eq__expr"><span class="mono">RPU_be = MonthlyCost / MAU</span></div>
         </div>
 
-        <div class="panel__viz" aria-hidden="true">
-          <!-- Subtle “systems map” line art to reinforce the lab vibe -->
-          <svg viewBox="0 0 600 240" role="img" aria-label="">
-            <g fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.7">
-              <rect x="24" y="28" width="160" height="54" rx="10"/>
-              <rect x="220" y="28" width="160" height="54" rx="10"/>
-              <rect x="416" y="28" width="160" height="54" rx="10"/>
-              <path d="M184 55 L220 55" />
-              <path d="M380 55 L416 55" />
-
-              <rect x="96" y="140" width="180" height="54" rx="10"/>
-              <rect x="324" y="140" width="180" height="54" rx="10"/>
-              <path d="M300 82 C300 110 186 110 186 140" opacity="0.55"/>
-              <path d="M300 82 C300 110 414 110 414 140" opacity="0.55"/>
-
-              <circle cx="300" cy="82" r="10" />
-              <path d="M300 92 L300 120" opacity="0.55"/>
-            </g>
-
-            <g fill="currentColor" opacity="0.8">
-              <text x="44" y="62">Architecture</text>
-              <text x="250" y="62">Cost Drivers</text>
-              <text x="452" y="62">Unit Economics</text>
-              <text x="126" y="174">Margin Resilience</text>
-              <text x="362" y="174">Optimization</text>
-            </g>
-          </svg>
-        </div>
-
         <div class="callout">
           <div class="callout__dot"></div>
           <div>
@@ -134,35 +102,6 @@
           break-even thresholds, and margin resilience under scale.
         </p>
       </header>
-
-      <div class="model">
-        <div class="model__label">Core model</div>
-        <div class="model__flow" role="list" aria-label="Framework flow">
-          <div class="node" role="listitem">
-            <div class="node__k">Layer 1</div>
-            <div class="node__t">Architecture</div>
-            <div class="node__d">Tokens, retrieval depth, tool calls, orchestration, caching.</div>
-          </div>
-          <div class="arrow" aria-hidden="true">→</div>
-          <div class="node" role="listitem">
-            <div class="node__k">Layer 2</div>
-            <div class="node__t">Cost</div>
-            <div class="node__d">CPER, overhead per request, utilization, cache economics.</div>
-          </div>
-          <div class="arrow" aria-hidden="true">→</div>
-          <div class="node" role="listitem">
-            <div class="node__k">Layer 3</div>
-            <div class="node__t">Margin resilience</div>
-            <div class="node__d">Stress tests: growth, volatility, prompt drift, pricing shifts.</div>
-          </div>
-          <div class="arrow" aria-hidden="true">→</div>
-          <div class="node" role="listitem">
-            <div class="node__k">Layer 4</div>
-            <div class="node__t">Viability</div>
-            <div class="node__d">Break-even thresholds and strategic sustainability under scale.</div>
-          </div>
-        </div>
-      </div>
 
       <div class="grid grid--3">
         <article class="card">
@@ -215,8 +154,7 @@
       </header>
 
       <div class="grid grid--3">
-        <article class="card card--field">
-          <div class="field__label">Field I</div>
+        <article class="card card--link">
           <h3>AI Systems Economics</h3>
           <ul class="list">
             <li>Cost per effective request (CPER)</li>
@@ -226,8 +164,7 @@
           </ul>
         </article>
 
-        <article class="card card--field">
-          <div class="field__label">Field II</div>
+        <article class="card card--link">
           <h3>Economic Signal Research</h3>
           <ul class="list">
             <li>Central bank speech sentiment modeling</li>
@@ -237,8 +174,7 @@
           </ul>
         </article>
 
-        <article class="card card--field">
-          <div class="field__label">Field III</div>
+        <article class="card card--link">
           <h3>Optimization & Structural Modeling</h3>
           <ul class="list">
             <li>Multi-parameter optimization</li>
@@ -250,79 +186,7 @@
       </div>
 
       <div class="footnote">
-        Note: each track will be published as a set of research notes (short briefs → longer papers → models).
-      </div>
-    </section>
-
-    <hr class="rule" />
-
-    <!-- NOTES / PUBLICATIONS -->
-    <section id="notes" class="section">
-      <header class="section__head">
-        <h2>Notes</h2>
-        <p class="sublead">
-          Short research briefs and working notes. Papers and models will be published progressively.
-        </p>
-      </header>
-
-      <div class="grid grid--3">
-        <article class="card card--note">
-          <div class="note__meta">
-            <span class="badge">In progress</span>
-            <span class="dotsep">•</span>
-            <span class="muted">AI Systems Economics</span>
-          </div>
-          <h3>From Mindshare to Revenue: A Systems Framework</h3>
-          <p class="muted">
-            How distribution, retention, and unit economics interact when AI inference cost is a first-class constraint.
-          </p>
-          <div class="note__actions">
-            <a class="link" href="mailto:afshar.sanam@gmail.com?subject=AI%20Lab%20—%20Request%20brief%3A%20Mindshare%20to%20Revenue">Request draft</a>
-            <span class="muted">/</span>
-            <a class="link" href="#framework">See model</a>
-          </div>
-        </article>
-
-        <article class="card card--note">
-          <div class="note__meta">
-            <span class="badge">Planned</span>
-            <span class="dotsep">•</span>
-            <span class="muted">Economic Signals</span>
-          </div>
-          <h3>LSE ICP: Bank of England Speech Sentiment & Regimes</h3>
-          <p class="muted">
-            Exploratory, narrative-driven analysis of sentiment evolution vs macro/market regimes.
-          </p>
-          <div class="note__actions">
-            <a class="link" href="mailto:afshar.sanam@gmail.com?subject=AI%20Lab%20—%20Notify%20me%3A%20BoE%20Sentiment%20Note">Notify me</a>
-            <span class="muted">/</span>
-            <a class="link" href="#tracks">Track details</a>
-          </div>
-        </article>
-
-        <article class="card card--note">
-          <div class="note__meta">
-            <span class="badge">Planned</span>
-            <span class="dotsep">•</span>
-            <span class="muted">Optimization</span>
-          </div>
-          <h3>Optimization Under Constraint: Practical Levers for Cost & Quality</h3>
-          <p class="muted">
-            A pragmatic playbook: caching, routing, compression, retrieval tuning — with economic guardrails.
-          </p>
-          <div class="note__actions">
-            <a class="link" href="mailto:afshar.sanam@gmail.com?subject=AI%20Lab%20—%20Notify%20me%3A%20Optimization%20Note">Notify me</a>
-            <span class="muted">/</span>
-            <a class="link" href="#framework">See levers</a>
-          </div>
-        </article>
-      </div>
-
-      <div class="cta cta--compact cta--notes">
-        <a class="btn" href="mailto:afshar.sanam@gmail.com?subject=AI%20Lab%20—%20Notes%20Subscription&body=Hi%20Afshar%2C%0A%0APlease%20add%20me%20to%20your%20AI%20Lab%20notes%20updates.%0A%0AName%3A%0AOrg%3A%0AInterests%3A%20AI%20Systems%20Economics%20/%20Signals%20/%20Optimization%0A">
-          Subscribe to notes (email)
-        </a>
-        <a class="btn btn--secondary" href="#about">About the founder</a>
+        Note: pages for each track can be published as separate research notes once the first briefs are finalized.
       </div>
     </section>
 
@@ -361,7 +225,7 @@
 
           <div class="cta cta--compact">
             <a class="btn" href="mailto:afshar.sanam@gmail.com?subject=AI%20Lab%20—%20Research%20Inquiry">Connect about research</a>
-            <a class="btn btn--secondary" href="#notes">Read notes</a>
+            <a class="btn btn--secondary" href="#about">About the founder</a>
           </div>
         </article>
       </div>

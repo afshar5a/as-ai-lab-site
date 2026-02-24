@@ -53,6 +53,10 @@ html[data-theme="dark"]{
   /* Misc */
   --rule: rgba(255,255,255,0.08);
   --focus: rgba(255,255,255,0.60);
+
+  /* Brand mark separation */
+  --markBg: #20202a;         /* darker gray box */
+  --markBorder: rgba(255,255,255,0.22);
 }
 
 /* =========================
@@ -94,6 +98,9 @@ html[data-theme="light"]{
   /* Misc */
   --rule: rgba(0,0,0,0.10);
   --focus: rgba(0,0,0,0.55);
+
+  --markBg: #e8e8e6;
+  --markBorder: rgba(0,0,0,0.25);
 }
 
 *{ box-sizing: border-box; }
@@ -216,19 +223,21 @@ main.wrap{
   width: 38px;
   height: 38px;
   flex: 0 0 auto;
+
   border-radius: 10px;
   display: grid;
   place-items: center;
 
-  border: 1px solid var(--line);
-  background: transparent;
+  background: var(--markBg);
+  border: 1px solid var(--markBorder);
 
+  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
   font-weight: 800;
-  letter-spacing: 0.7px;
-  font-size: 12px;
+  letter-spacing: 0.6px;
+  font-size: 13px;
 
-  outline: 1px solid var(--line2);
-  outline-offset: -4px; /* inner frame */
+  /* subtle separation */
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.6);
 }
 
 .brand__text{ min-width: 0; }

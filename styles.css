@@ -22,19 +22,20 @@ html[data-theme="dark"]{
   --muted: #d1d1d6;
   --faint: #a6a6af;
 
-  --line: rgba(255,255,255,0.10);
-  --line2: rgba(255,255,255,0.06);
+  --line: rgba(255,255,255,0.14);
+  --line2: rgba(255,255,255,0.08);
 
   --gridV: rgba(255,255,255,0.03);
   --gridH: rgba(255,255,255,0.02);
 
   /* Surfaces */
-  --surface: rgba(255,255,255,0.035);
-  --surfaceHover: rgba(255,255,255,0.05);
-  --surface2: rgba(255,255,255,0.03);
-  --surface3: rgba(0,0,0,0.18);
-  --shadow: 0 18px 55px rgba(0,0,0,0.55);
-
+  /* Surfaces (stronger dark mode layering) */
+  --surface: #121218;
+  --surfaceHover: #16161d;
+  --surface2: #14141b;
+  --surface3: #0f0f14;
+  --shadow: 0 12px 32px rgba(0,0,0,0.6);
+   
   /* Accents */
   --markBorder: rgba(255,255,255,0.12);
   --markBg: rgba(255,255,255,0.03);

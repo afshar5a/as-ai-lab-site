@@ -5,6 +5,19 @@
 ------------------------------ */
 
 :root{
+  /* Shared layout values */
+  --max: 1080px;
+  --r: 18px;
+  --r2: 22px;
+  --shadow: 0 18px 55px rgba(0,0,0,0.55);
+  --gridStep: 64px;
+  --topbarH: 72px;
+}
+
+/* =========================
+   DARK THEME (default)
+========================= */
+html[data-theme="dark"]{
   --bg: #07070a;
   --ink: #ffffff;
   --muted: #d1d1d6;
@@ -14,17 +27,29 @@
 
   --card: rgba(255,255,255,0.035);
   --cardHover: rgba(255,255,255,0.05);
-  --shadow: 0 18px 55px rgba(0,0,0,0.55);
 
-  --r: 18px;
-  --r2: 22px;
-  --max: 1080px;
-
-  --gridStep: 64px;
   --gridV: rgba(255,255,255,0.03);
   --gridH: rgba(255,255,255,0.02);
+}
 
-  --topbarH: 72px;
+/* =========================
+   LIGHT THEME
+========================= */
+html[data-theme="light"]{
+  --bg: #f7f7f5;
+  --ink: #111111;
+  --muted: #4a4a4a;
+  --faint: #777777;
+  --line: rgba(0,0,0,0.12);
+  --line2: rgba(0,0,0,0.08);
+
+  --card: rgba(0,0,0,0.04);
+  --cardHover: rgba(0,0,0,0.07);
+
+  --shadow: 0 18px 55px rgba(0,0,0,0.12);
+
+  --gridV: rgba(0,0,0,0.04);
+  --gridH: rgba(0,0,0,0.03);
 }
 
 *{ box-sizing: border-box; }
@@ -220,6 +245,26 @@ main.wrap{
 }
 .nav__cta:hover{
   opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   Theme Toggle Button
+========================= */
+.theme-toggle{
+  flex: 0 0 auto;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 120ms ease, transform 120ms ease;
+}
+
+.theme-toggle:hover{
+  background: var(--cardHover);
   transform: translateY(-1px);
 }
 

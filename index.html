@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -28,6 +28,11 @@
         <a href="#tracks">Research tracks</a>
         <a href="#audience">Who it’s for</a>
         <a href="#about">About</a>
+        
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          ◐
+        </button>
+        
         <a class="nav__cta" href="mailto:afshar.sanam@gmail.com?subject=AI%20Lab%20—%20Connect">Connect</a>
       </nav>
     </div>
@@ -303,5 +308,28 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
+
+  <script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
+<script>
+  const toggle = document.getElementById("themeToggle");
+  const root = document.documentElement;
+
+  toggle.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  });
+
+  // Persist theme
+  const saved = localStorage.getItem("theme");
+  if (saved) {
+    root.setAttribute("data-theme", saved);
+  }
+</script>
+
 </body>
 </html>

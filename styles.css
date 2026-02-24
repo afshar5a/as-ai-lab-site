@@ -219,10 +219,15 @@ main.wrap{
   border-radius: 12px;
   display: grid;
   place-items: center;
-  border: 1px solid var(--markBorder);
-  background: var(--markBg);
-  font-weight: 700;
-  letter-spacing: 0.5px;
+
+  border: 1px solid var(--line);
+  background: var(--surface2);
+  box-shadow: var(--shadow);
+
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  font-size: 13px;
+  line-height: 1;
 }
 
 .brand__text{ min-width: 0; }

@@ -306,30 +306,21 @@
   </main>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  // Set saved theme early (prevents flash)
+  const saved = localStorage.getItem("theme");
+  if (saved) document.documentElement.setAttribute("data-theme", saved);
 
-  <script>
+  // Footer year
   document.getElementById("y").textContent = new Date().getFullYear();
-</script>
 
-<script>
+  // Theme toggle
   const toggle = document.getElementById("themeToggle");
-  const root = document.documentElement;
-
   toggle.addEventListener("click", () => {
-    const current = root.getAttribute("data-theme");
-    const next = current === "dark" ? "light" : "dark";
+    const root = document.documentElement;
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
     root.setAttribute("data-theme", next);
     localStorage.setItem("theme", next);
   });
-
-  // Persist theme
-  const saved = localStorage.getItem("theme");
-  if (saved) {
-    root.setAttribute("data-theme", saved);
-  }
 </script>
-
 </body>
 </html>

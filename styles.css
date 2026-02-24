@@ -1,15 +1,14 @@
 /* -----------------------------
    Afshar Sanam AI Lab — styles.css
-   Plain matte black + grid texture (NO gradients)
-   FIX: topbar stays visible (fixed + forced)
+   Dual theme (dark/light) + grid texture (NO gradients)
+   Fixed topbar
 ------------------------------ */
 
 :root{
-  /* Shared layout values */
+  /* Layout */
   --max: 1080px;
   --r: 18px;
   --r2: 22px;
-  --shadow: 0 18px 55px rgba(0,0,0,0.55);
   --gridStep: 64px;
   --topbarH: 72px;
 }
@@ -22,14 +21,37 @@ html[data-theme="dark"]{
   --ink: #ffffff;
   --muted: #d1d1d6;
   --faint: #a6a6af;
+
   --line: rgba(255,255,255,0.10);
   --line2: rgba(255,255,255,0.06);
 
-  --card: rgba(255,255,255,0.035);
-  --cardHover: rgba(255,255,255,0.05);
-
   --gridV: rgba(255,255,255,0.03);
   --gridH: rgba(255,255,255,0.02);
+
+  /* Surfaces */
+  --surface: rgba(255,255,255,0.035);
+  --surfaceHover: rgba(255,255,255,0.05);
+  --surface2: rgba(255,255,255,0.03);
+  --surface3: rgba(0,0,0,0.18);
+  --shadow: 0 18px 55px rgba(0,0,0,0.55);
+
+  /* Accents */
+  --markBorder: rgba(255,255,255,0.12);
+  --markBg: rgba(255,255,255,0.03);
+
+  /* Interactive */
+  --hoverFill: rgba(255,255,255,0.03);
+  --btnBorder: rgba(255,255,255,0.18);
+  --btnBg: rgba(255,255,255,0.06);
+  --btnBgHover: rgba(255,255,255,0.08);
+
+  /* CTA */
+  --ctaBg: #ffffff;
+  --ctaText: #0b0b0d;
+
+  /* Misc */
+  --rule: rgba(255,255,255,0.08);
+  --focus: rgba(255,255,255,0.60);
 }
 
 /* =========================
@@ -38,18 +60,39 @@ html[data-theme="dark"]{
 html[data-theme="light"]{
   --bg: #f7f7f5;
   --ink: #111111;
-  --muted: #4a4a4a;
-  --faint: #777777;
+  --muted: #3f3f3f;
+  --faint: #6a6a6a;
+
   --line: rgba(0,0,0,0.12);
   --line2: rgba(0,0,0,0.08);
 
-  --card: rgba(0,0,0,0.04);
-  --cardHover: rgba(0,0,0,0.07);
+  --gridV: rgba(0,0,0,0.045);
+  --gridH: rgba(0,0,0,0.03);
 
+  /* Surfaces */
+  --surface: rgba(0,0,0,0.04);
+  --surfaceHover: rgba(0,0,0,0.07);
+  --surface2: rgba(0,0,0,0.03);
+  --surface3: rgba(0,0,0,0.04);
   --shadow: 0 18px 55px rgba(0,0,0,0.12);
 
-  --gridV: rgba(0,0,0,0.04);
-  --gridH: rgba(0,0,0,0.03);
+  /* Accents */
+  --markBorder: rgba(0,0,0,0.14);
+  --markBg: rgba(0,0,0,0.03);
+
+  /* Interactive */
+  --hoverFill: rgba(0,0,0,0.035);
+  --btnBorder: rgba(0,0,0,0.16);
+  --btnBg: rgba(0,0,0,0.03);
+  --btnBgHover: rgba(0,0,0,0.06);
+
+  /* CTA */
+  --ctaBg: #111111;
+  --ctaText: #ffffff;
+
+  /* Misc */
+  --rule: rgba(0,0,0,0.10);
+  --focus: rgba(0,0,0,0.55);
 }
 
 *{ box-sizing: border-box; }
@@ -89,7 +132,7 @@ a:hover{ opacity: 0.97; }
 p{ margin: 0 0 14px; }
 ul{ margin: 0; padding-left: 18px; }
 
-/* Wrapper: no calc() rounding -> no overflow */
+/* Wrapper */
 .wrap{
   width: 100%;
   max-width: var(--max);
@@ -127,7 +170,7 @@ main.wrap{
   height: auto;
   padding: 10px 12px;
   border-radius: 12px;
-  background: rgba(255,255,255,0.10);
+  background: var(--surfaceHover);
   border: 1px solid var(--line);
   z-index: 9999;
 }
@@ -146,7 +189,6 @@ main.wrap{
   background: var(--bg) !important;
   border-bottom: 1px solid var(--line2);
 
-  /* prevent iOS jitter */
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
@@ -155,11 +197,9 @@ main.wrap{
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   height: var(--topbarH);
   gap: 16px;
-
-  padding: 0; /* fixed height, no vertical padding */
+  padding: 0;
 }
 
 /* Brand */
@@ -178,8 +218,8 @@ main.wrap{
   border-radius: 12px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--markBorder);
+  background: var(--markBg);
   font-weight: 700;
   letter-spacing: 0.5px;
 }
@@ -204,7 +244,7 @@ main.wrap{
   text-overflow: ellipsis;
 }
 
-/* Nav: never wrap (wrapping changes header height -> “collapse”) */
+/* Nav */
 .nav{
   display: flex;
   align-items: center;
@@ -234,13 +274,14 @@ main.wrap{
 
 .nav a:hover{
   color: var(--ink);
-  background: rgba(255,255,255,0.03);
+  background: var(--hoverFill);
 }
 
+/* CTA (theme-aware) */
 .nav__cta{
-  color: #0b0b0d !important;
-  background: var(--ink);
-  border: 1px solid rgba(255,255,255,0.18);
+  background: var(--ctaBg) !important;
+  color: var(--ctaText) !important;
+  border: 1px solid var(--line);
   font-weight: 700;
 }
 .nav__cta:hover{
@@ -248,23 +289,20 @@ main.wrap{
   transform: translateY(-1px);
 }
 
-/* =========================
-   Theme Toggle Button
-========================= */
+/* Theme Toggle Button */
 .theme-toggle{
   flex: 0 0 auto;
   font-size: 14px;
   padding: 8px 10px;
   border-radius: 12px;
   border: 1px solid var(--line);
-  background: var(--card);
+  background: var(--surface);
   color: var(--ink);
   cursor: pointer;
   transition: background 120ms ease, transform 120ms ease;
 }
-
 .theme-toggle:hover{
-  background: var(--cardHover);
+  background: var(--surfaceHover);
   transform: translateY(-1px);
 }
 
@@ -292,7 +330,8 @@ main.wrap{
   content:"";
   width: 18px;
   height: 1px;
-  background: rgba(255,255,255,0.35);
+  background: var(--muted);
+  opacity: 0.5;
 }
 
 h1{
@@ -344,8 +383,8 @@ h3{
   justify-content: center;
   padding: 10px 14px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.18);
-  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--btnBorder);
+  background: var(--btnBg);
   color: var(--ink);
   font-weight: 700;
   font-size: 13.5px;
@@ -353,16 +392,16 @@ h3{
 }
 .btn:hover{
   transform: translateY(-1px);
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.24);
+  background: var(--btnBgHover);
 }
+
 .btn--secondary{
   background: transparent;
   color: var(--muted);
 }
 .btn--secondary:hover{
   color: var(--ink);
-  background: rgba(255,255,255,0.03);
+  background: var(--hoverFill);
 }
 
 /* Pills */
@@ -376,15 +415,15 @@ h3{
   font-size: 12px;
   color: var(--muted);
   padding: 7px 10px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  background: var(--surface2);
   border-radius: 999px;
 }
 
 /* Panel */
 .panel{
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  background: var(--surface2);
   border-radius: var(--r2);
   box-shadow: var(--shadow);
   padding: 18px 16px 14px;
@@ -399,8 +438,8 @@ h3{
 }
 
 .eq{
-  border: 1px solid rgba(255,255,255,0.08);
-  background: rgba(0,0,0,0.18);
+  border: 1px solid var(--line2);
+  background: var(--surface3);
   border-radius: 16px;
   padding: 10px 12px;
   margin-bottom: 10px;
@@ -424,7 +463,7 @@ h3{
   align-items: flex-start;
   margin-top: 12px;
   padding-top: 12px;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid var(--line2);
 }
 
 .callout__dot{
@@ -432,8 +471,9 @@ h3{
   height: 10px;
   border-radius: 999px;
   margin-top: 4px;
-  background: rgba(255,255,255,0.60);
-  box-shadow: 0 0 0 6px rgba(255,255,255,0.08);
+  background: var(--muted);
+  opacity: 0.9;
+  box-shadow: 0 0 0 6px var(--surface2);
 }
 
 .callout__title{
@@ -450,7 +490,6 @@ h3{
 /* Sections / Grid / Cards */
 .section{ padding: 28px 0; }
 .section__head{ margin-bottom: 18px; }
-
 .sublead{ color: var(--muted); max-width: 82ch; }
 
 .grid{ display: grid; gap: 14px; }
@@ -458,16 +497,15 @@ h3{
 .grid--3{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 .card{
-  border: 1px solid rgba(255,255,255,0.10);
-  background: var(--card);
+  border: 1px solid var(--line);
+  background: var(--surface);
   border-radius: var(--r2);
   padding: 16px 16px 14px;
   transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
 }
 .card:hover{
   transform: translateY(-2px);
-  background: var(--cardHover);
-  border-color: rgba(255,255,255,0.16);
+  background: var(--surfaceHover);
 }
 
 .muted{ color: var(--muted); }
@@ -483,8 +521,8 @@ h3{
   font-size: 12px;
   color: var(--muted);
   padding: 6px 9px;
-  border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(0,0,0,0.16);
+  border: 1px solid var(--line);
+  background: var(--surface3);
   border-radius: 999px;
 }
 
@@ -497,7 +535,7 @@ h3{
 .rule{
   border: none;
   height: 1px;
-  background: rgba(255,255,255,0.08);
+  background: var(--rule);
   margin: 18px 0 0;
 }
 
@@ -512,10 +550,10 @@ h3{
   color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(255,255,255,0.25);
+  text-decoration-color: color-mix(in srgb, var(--ink) 25%, transparent);
 }
 .link:hover{
-  text-decoration-color: rgba(255,255,255,0.55);
+  text-decoration-color: color-mix(in srgb, var(--ink) 55%, transparent);
 }
 
 /* Footer */
@@ -525,7 +563,7 @@ h3{
   align-items: flex-end;
   gap: 14px;
   padding: 26px 0 36px;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid var(--line2);
   margin-top: 24px;
 }
 
@@ -539,11 +577,11 @@ h3{
   font-size: 13px;
 }
 
-.sep{ color: rgba(255,255,255,0.25); }
+.sep{ color: var(--faint); }
 .fineprint{ color: var(--faint); font-size: 12.5px; margin-top: 14px; }
 
 :focus-visible{
-  outline: 2px solid rgba(255,255,255,0.60);
+  outline: 2px solid var(--focus);
   outline-offset: 3px;
   border-radius: 10px;
 }

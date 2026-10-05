@@ -1,30 +1,50 @@
-# AS AI Lab — Public Research Site
+# Afshar Sanam AI Lab — Website
 
-**Founder & Research Lead:** Afshar Sanam
+This repository hosts the public website for:
 
-This repository hosts the public website for **AS AI Lab**, an independent research initiative focused on:
+**Afshar Sanam AI Lab**  
+Computational Economics, AI Systems Architecture & Structural Modeling
 
-- computational economics
-- AI systems architecture
-- structural modelling
-- optimization under constraint
+---
 
-The site serves as the public-facing research portal for frameworks, experiments and writing developed through the lab.
+## Purpose
 
-## Research Focus
+The site presents applied research exploring:
 
-The work explores how architectural decisions influence the economic behaviour of AI systems, including cost structures, margin resilience, scaling effects and optimization constraints.
+- AI systems economics
+- Computational macro-level signal modeling
+- Structural optimization under constraint
+- Economic behavior of intelligent systems
+
+It serves as the public-facing research portal.
+
+---
 
 ## Tech Stack
 
-- HTML
+- Static HTML
 - CSS
-- GitHub Pages
+- Hosted via GitHub Pages
+- Custom domain managed through Namecheap DNS
+
+---
+
+## Structure
+
+```
+index.html
+styles.css
+assets/
+```
+
+---
 
 ## Deployment
 
-The site is deployed using GitHub Pages and a custom domain.
+This site is deployed using GitHub Pages and linked to a custom domain via Namecheap Advanced DNS configuration.
 
-## Independence
+---
 
-AS AI Lab is an independent research initiative founded by Afshar Sanam. No confidential or proprietary employer information is used.
+## Independence Statement
+
+This site reflects independent research and does not use confidential or employer information.
